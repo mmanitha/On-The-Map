@@ -22,6 +22,7 @@
 		A41FDA6F1E9DC7370067CFB0 /* UdacityConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FDA6E1E9DC7370067CFB0 /* UdacityConvenience.swift */; };
 		A4461FE11E9F3B78006C307A /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4461FE01E9F3B78006C307A /* StudentLocation.swift */; };
 		A4461FE31EA46A9F006C307A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4461FE21EA46A9F006C307A /* TableViewController.swift */; };
+		A4461FE51EA478AF006C307A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4461FE41EA478AF006C307A /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A41FDA6E1E9DC7370067CFB0 /* UdacityConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConvenience.swift; sourceTree = "<group>"; };
 		A4461FE01E9F3B78006C307A /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		A4461FE21EA46A9F006C307A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A4461FE41EA478AF006C307A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				A41FDA341E9D3CC90067CFB0 /* MapViewController.swift */,
 				A4461FE21EA46A9F006C307A /* TableViewController.swift */,
+				A4461FE41EA478AF006C307A /* LogInViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -171,9 +174,9 @@
 		A41FDA651E9DB7F50067CFB0 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				A41FDA6E1E9DC7370067CFB0 /* UdacityConvenience.swift */,
 				A41FDA661E9DBA330067CFB0 /* UdacityClient.swift */,
 				A41FDA681E9DBB0B0067CFB0 /* UdacityConstants.swift */,
-				A41FDA6E1E9DC7370067CFB0 /* UdacityConvenience.swift */,
 				A41FDA6A1E9DC2F60067CFB0 /* ParseClient.swift */,
 				A41FDA6C1E9DC3370067CFB0 /* ParseConstants.swift */,
 				A4461FE01E9F3B78006C307A /* StudentLocation.swift */,
@@ -320,6 +323,7 @@
 			files = (
 				A4461FE11E9F3B78006C307A /* StudentLocation.swift in Sources */,
 				A41FDA6B1E9DC2F60067CFB0 /* ParseClient.swift in Sources */,
+				A4461FE51EA478AF006C307A /* LogInViewController.swift in Sources */,
 				A41FDA671E9DBA330067CFB0 /* UdacityClient.swift in Sources */,
 				A4461FE31EA46A9F006C307A /* TableViewController.swift in Sources */,
 				A41FDA691E9DBB0B0067CFB0 /* UdacityConstants.swift in Sources */,
