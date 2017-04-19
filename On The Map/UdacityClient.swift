@@ -27,7 +27,7 @@ class UdacityClient : NSObject {
         super.init()
     }
     
-    // MARK: GET
+    
 
     func authenticateWithViewController(_ hostViewController: UIViewController, completionHandlerForAuth: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
@@ -53,6 +53,7 @@ class UdacityClient : NSObject {
         }
     }
     
+    // MARK: GET
     
     private func getCredentials(_ completionHandlerForGetCredentials: @escaping (_ success: Bool, _ accountKey: String?, _ sessionId: String?, _ errorString: String?) -> Void) {
         

@@ -10,13 +10,14 @@ extension ParseClient {
     
     struct Constants {
         
+        // provided by the lesson
         static let parseApplicationId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
         static let parseRESTApiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
         
-        //MARK: URLs
+        // MARK: URLs
         static let ApiScheme = "https"
         static let ApiHost = "parse.udacity.com"
-        static let ApiPath = "parse/classes/StudentLocation"
+        static let ApiPath = "/parse/classes/StudentLocation"
         
     }
     
