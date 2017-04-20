@@ -21,9 +21,9 @@ class ParseClient : NSObject {
         let request = NSMutableURLRequest(url: urlFromParameters)
         request.addValue("\(ParseClient.Constants.parseApplicationId)", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("\(ParseClient.Constants.parseRESTApiKey)", forHTTPHeaderField: "X-Parse-REST-API-Key")
-        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
         if jsonBody != nil {
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonBody?.data(using: String.Encoding.utf8)
         }
         
@@ -55,9 +55,20 @@ class ParseClient : NSObject {
                 return
             }
             
+            print(data)
+            
             /* 5/6. Parse the data and use the data (happens in completion handler) */
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHanderForParse)
-
+            var parsedResult: AnyObject! = nil
+            
+            do {
+                parsedResult = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as AnyObject
+                
+            } catch {
+                
+                let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
+                completionHanderForParse(nil, NSError(domain: "taskForParse", code: 1, userInfo: userInfo))
+            }
+            completionHanderForParse(parsedResult, nil)
         }
         
         /* 7. Start the request */
@@ -68,17 +79,22 @@ class ParseClient : NSObject {
     
     
 
+    
     // GETting Student Locations
 
-    func getStudents(_ completionHandlerForGetStudents: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) {
+    func getStudents(_ completionHandlerForGetStudents: @escaping (_ result: [[String:AnyObject]]?, _ error: NSError?) -> Void) {
         
-        var parameters = [String:AnyObject]()
-        parameters["limit"] = "1" as AnyObject?
+        let parameters = ["limit":"100"]
         
         let _ = taskForParse(methodType: "GET", parameters: parameters as [String:AnyObject], pathExtension: nil, jsonBody: nil) { (result, error) in
             
             if error == nil {
-                completionHandlerForGetStudents(result, nil)
+                
+                // get into the results array
+                if let results = result?["results"] as? [[String:AnyObject]] {
+                    completionHandlerForGetStudents(results, nil)
+                }
+                
             } else {
                 print(error!)
                 let userInfo = [NSLocalizedDescriptionKey : error]
@@ -164,6 +180,7 @@ class ParseClient : NSObject {
         completionHandlerForConvertData(parsedResult, nil)
     }
     
+    
     // create a URL from parameters
     private func ParseURLFromParameters(_ parameters: [String:AnyObject], withPathExtension: String? = nil) -> URL {
         
@@ -180,6 +197,7 @@ class ParseClient : NSObject {
         
         return components.url!
     }
+    
     
     // MARK: Shared Instance
     

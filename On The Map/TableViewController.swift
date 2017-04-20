@@ -98,9 +98,9 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
         let student = emptyStudentArray[indexPath.row]
-        let firstName = student.firstName as! String
-        let lastName = student.lastName as! String
-        cell?.textLabel?.text = firstName + " " + lastName
+        let firstName = student.firstName as String!
+        let lastName = student.lastName as String!
+        cell?.textLabel?.text = firstName! + " " + lastName!
         return cell!
     }
     

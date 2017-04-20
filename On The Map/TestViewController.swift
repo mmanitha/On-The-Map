@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - TEST VIEW CONTROLLER (Used to test networking code.)
+
 class TestViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -28,9 +30,18 @@ class TestViewController: UIViewController {
             
             if error == nil {
                 
-                print(result!)
+                //print(result!)
+                
+                
+                // get the results dictionary
+                //let dictionary = result?["results"]
+                
+                
+                //let fistName = dictionary["firstName"]
+                //print(dictionary!)
                 
             } else {
+                
                 
                 print(error!)
             }
