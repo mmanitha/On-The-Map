@@ -46,6 +46,13 @@ class LogInViewController: UIViewController {
         }
     }
     
+    @IBAction func signUp(_ sender: UIButton) {
+        
+        UIApplication.shared.open(URL(string: UdacityClient.Constants.signUp)!, options: [:], completionHandler: nil)
+    }
+    
+    
+    
     // MARK: Login
     
     private func completeLogin() {

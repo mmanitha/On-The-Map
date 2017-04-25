@@ -21,6 +21,8 @@ extension UdacityClient {
         static let ApiHost = "www.udacity.com"
         static let ApiPath = "/api/session"
         
+        static let signUp = "https://www.udacity.com/account/auth#!/signup"
+        
     }
     
     // MARK: Parameter Keys
